@@ -31,7 +31,7 @@ BACK_BUTTON = InlineKeyboardMarkup([[InlineKeyboardButton("🏠 go back", callba
 
 @Client.on_message(filters.text & ~filters.private)
 async def delcmd(_, message: Message):
-    if await delcmd_is_on(message.chat.id) and message.text.startswith("/") or message.text.startswith("!"):
+    if await delcmd_is_on(message.chat.id) and message.text.startswith("/play") or message.text.startswith("!play"):
         await message.delete()
     await message.continue_propagation()
 
